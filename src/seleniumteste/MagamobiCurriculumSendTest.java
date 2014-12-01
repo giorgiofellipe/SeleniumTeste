@@ -54,6 +54,9 @@ public class MagamobiCurriculumSendTest {
         WebElement mensagem = driver.findElement(By.name("mensagem"));
         mensagem.sendKeys("testando mensagem");
         
+        WebElement arquivo = driver.findElement(By.id("arquivo"));
+        arquivo.sendKeys("C:\\teste.doc");
+        
         //Resolvendo o "captcha"
         String captchaValue = "";
         WebElement secaoArquivo = driver.findElement(By.className("arquivo"));
