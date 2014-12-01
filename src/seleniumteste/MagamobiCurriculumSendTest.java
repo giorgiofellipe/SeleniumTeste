@@ -43,6 +43,16 @@ public class MagamobiCurriculumSendTest {
         WebElement email = driver.findElement(By.id("form-email"));
         email.sendKeys("teste@selenium.com.br");
         
+        WebElement telefone = driver.findElement(By.id("form-telefone"));
+        telefone.click();
+        telefone.sendKeys("4735222608");
+        
+        WebElement data = driver.findElement(By.id("form-data"));
+        data.click();
+        data.sendKeys("08021993");
+        
+        WebElement mensagem = driver.findElement(By.name("mensagem"));
+        mensagem.sendKeys("testando mensagem");
         
         //Resolvendo o "captcha"
         String captchaValue = "";
