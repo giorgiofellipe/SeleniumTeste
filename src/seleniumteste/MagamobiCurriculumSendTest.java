@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  *
@@ -14,11 +16,17 @@ public class MagamobiCurriculumSendTest {
     
     public static void main(String[] args) {
         WebDriver driver = new FirefoxDriver();
-        
+        try {
         driver.get("http://magamobi.com.br/");
+        
+        WebDriverWait wait = new WebDriverWait(driver, 15);// 15 segundos
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("chama-tc")));
         
         WebElement trabalheConosco = driver.findElement(By.id("chama-tc"));
         trabalheConosco.click();
+        
+        wait = new WebDriverWait(driver, 5);// 5 segundos
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("vaga-selecionada")));
         
         //Selecionado a vaga de Coordenador de TI
         WebElement vaga = driver.findElement(By.id("vaga-selecionada"));
@@ -56,6 +64,9 @@ public class MagamobiCurriculumSendTest {
         captchaResposta.sendKeys(String.valueOf(captchaResult));
         
         vaga.submit();
+        } catch (Exception e) {
+            System.err.println("Erro: " + e.getMessage());
+        }
     }
     
 }
