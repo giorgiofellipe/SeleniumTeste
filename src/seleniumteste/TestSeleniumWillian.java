@@ -20,10 +20,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  *
- * @author Usuario
+ * @author Willian
  */
-public class LoginHotmailSeleniumTest {
-     public static void main(String[] args) {
+public class TestSeleniumWillian {
+    
+ public static void main(String[] args) {
         WebDriver driver = new FirefoxDriver();
         try {
         driver.get("http://delsoftsistemas.com.br");
@@ -34,14 +35,12 @@ public class LoginHotmailSeleniumTest {
         WebElement aempresa = driver.findElement(By.id("menu-item-32"));
         aempresa.click();
         
-        wait = new WebDriverWait(driver, 15);// 15 segundos
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu-item-3691")));       
+        wait = new WebDriverWait(driver, 10);// 15 segundos
         
         WebElement imprensa = driver.findElement(By.id("menu-item-3691"));
         imprensa.click();
         
-        wait = new WebDriverWait(driver, 15);// 15 segundos
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu-item-27")));       
+        wait = new WebDriverWait(driver, 10);// 15 segundos
         
         WebElement contato = driver.findElement(By.id("menu-item-27"));
         contato.click();
